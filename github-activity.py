@@ -50,12 +50,12 @@ def main():
     args = sys.argv[1:]
     if len(args) < 1:
         print("Error: no username provided")
-        return
+        sys.exit(1)
     else:
         username = args[0]
         events = ambil_event(username)
         if events is None:
-            return
+            sys.exit(1)
         if not events:
             print(f"No public events found for user '{username}'.")
             return
